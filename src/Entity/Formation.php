@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource()
@@ -19,16 +20,19 @@ class Formation
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $years;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $school;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $speciality;
