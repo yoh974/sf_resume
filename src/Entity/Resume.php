@@ -65,6 +65,11 @@ class Resume
      */
     private $xppros;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $is_displayed;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
@@ -234,6 +239,18 @@ class Resume
                 $xppro->setResume(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsDisplayed(): ?bool
+    {
+        return $this->is_displayed;
+    }
+
+    public function setIsDisplayed(?bool $is_displayed): self
+    {
+        $this->is_displayed = $is_displayed;
 
         return $this;
     }
